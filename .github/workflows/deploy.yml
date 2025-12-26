@@ -21,7 +21,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Upload website to S3
-        run: aws s3 sync ./installer.sh s3://installer.sh --delete
+          run: aws s3 cp index.html s3://installer.sh/index.html
 
       - name: Invalidate CloudFront cache
         run: aws cloudfront create-invalidation \
